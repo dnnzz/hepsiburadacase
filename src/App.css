@@ -1,38 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Some browsers will not display the caret when using calc, so we put the fallback first */
+  background: url("data:image/svg+xml,%0A%3Csvg width='11' height='5' viewBox='0 0 11 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.34375 0L5.34375 5L10.3438 0L0.34375 0Z' fill='%23BDBDBD'/%3E%3C/svg%3E")
+    white no-repeat 98.5% !important; /* !important used for overriding all other customisations */
+  background: url("data:image/svg+xml,%0A%3Csvg width='11' height='5' viewBox='0 0 11 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.34375 0L5.34375 5L10.3438 0L0.34375 0Z' fill='%23BDBDBD'/%3E%3C/svg%3E")
+    white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*For IE*/
+select::-ms-expand {
+  display: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+#modal {
+  border: 1px solid rgba(228, 228, 228, 0.6);
+  box-sizing: border-box;
+  box-shadow: 0px 6px 12px rgba(50, 50, 71, 0.07);
+  border-radius: 4px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+#modal:empty {
+  display: none;
+}
+
+#modal > div {
+  background-color: white;
+  max-width: 500px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#modal h1 {
+  color: rgba(72, 72, 72, 1);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#modal p {
+  color: rgba(72, 72, 72, 1);
+  font-weight: normal;
+  font-size: 14px;
+}
+
+#modal .buttons button {
+  float: right;
+  display: inline-block;
+  margin-right: 15px;
+  border: none;
+  width: 70px;
+  height: 26px;
+}
+
+#modal .buttons .yesBtn {
+  background-color: #90d659;
+  border-radius: 4px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#modal .buttons .noBtn {
+  background-color: #d65959;
+  border-radius: 4px;
+  color: white;
 }

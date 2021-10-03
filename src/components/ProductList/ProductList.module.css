@@ -1,0 +1,19 @@
+.gridLayout {
+  display: grid;
+  grid-template-columns: 254px 254px 254px 254px;
+  grid-template-rows: 472px 472px 472px;
+  gap: 17px 14px;
+  grid-auto-flow: row;
+  margin-left: 8.5vw;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . .";
+}
+
+@media (min-width: 1900px) {
+  .gridLayout {
+    gap: 17px 157px;
+    margin-left: 5vw;
+  }
+}

@@ -1,0 +1,37 @@
+.sidebarWrapper {
+  text-align: left;
+}
+
+.sidebarWrapper h5 {
+  font-size: 16px;
+  color: #484848;
+}
+.sidebarWrapper ul {
+  list-style: none;
+  text-align: left;
+  padding-inline-start: 0px;
+}
+
+.sidebarWrapper ul li {
+  cursor: pointer;
+  color: #646464;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.sidebarWrapper ul li:hover {
+  color: #ff6000;
+}
+@media (max-width: 1900px) {
+  .sidebarWrapper {
+    padding-left: 50px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .sidebarWrapper {
+    padding-left: 50px;
+    padding-right: 25px;
+  }
+}

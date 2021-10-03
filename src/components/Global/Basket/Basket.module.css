@@ -1,0 +1,118 @@
+.basketWrapper {
+  height: 48px;
+  width: 118px;
+}
+
+.basket {
+  position: relative;
+  color: #b0b0b0;
+  border: 1px solid #b0b0b0;
+  border-radius: 4px;
+  background-color: white;
+  height: 48px;
+  width: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text {
+  font-size: 17px;
+  line-height: 24px;
+  align-self: center;
+  margin-left: auto;
+}
+.badge {
+  position: relative;
+  left: 14%;
+  top: -22px;
+  width: 18px;
+  height: 18px;
+  background: #ff6000;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  line-height: 100%;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.miniCart {
+  visibility: visible;
+  width: 360px;
+  height: 360px;
+  background: #fff;
+  z-index: 5;
+  overflow-y: scroll;
+  position: absolute;
+  transform: translateX(-67.3%);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: default;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  background-image: linear-gradient(to left, transparent 115px, #b0b0b0 5px);
+  border-right: 1px solid #b0b0b0;
+  border-bottom: 1px solid #b0b0b0;
+  border-left: 1px solid #b0b0b0;
+  background-position: 100% 0, 100% 0, 0 100%, 0 100%;
+  background-size: 100% 1px, 1px 100%;
+  background-repeat: no-repeat;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.miniCart ul {
+  list-style-type: none;
+}
+
+.productWrapper {
+  margin-top: 21px;
+  display: flex;
+}
+
+.productName {
+  margin-left: 10px;
+  margin-top: -15px;
+  word-break: break-all;
+}
+.productName p {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  color: #484848;
+}
+
+.productInfoWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.deleteBtnWrapper {
+  align-self: flex-start;
+  margin: 10px;
+}
+
+.deleteBtn {
+  color: #f90000;
+  background-color: #fff;
+  border: 1px solid #f90000;
+  height: 19px;
+  width: 48px;
+  line-height: 18px;
+  font-size: 10px;
+  border-radius: 4px;
+  padding: initial;
+}
+
+.deleteBtn span {
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 1900px) {
+  .basket {
+    margin-left: -140px;
+  }
+}
