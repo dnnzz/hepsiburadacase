@@ -7,6 +7,7 @@ import Context from "./components/Context/Context";
 
 // set product data to localstorage on start
 window.localStorage.setItem("productList", JSON.stringify(products));
+window.localStorage.setItem("cart", JSON.stringify([]));
 
 ReactDOM.render(
   <React.StrictMode>

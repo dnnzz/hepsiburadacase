@@ -6,7 +6,8 @@ const AppContext = createContext();
 const Context = ({ children }) => {
   // get Localstorage productlist ------
   const products = JSON.parse(localStorage.getItem("productList"));
-  const cart = JSON.parse(localStorage.getItem("cart"));
+  var cart = JSON.parse(localStorage.getItem("cart"));
+
   const [state, dispatch] = useReducer(cartReducer, {
     cart: cart,
   });
