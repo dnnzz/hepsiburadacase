@@ -16,6 +16,7 @@ export default function Dropdown() {
   return (
     <div className={styles.dropDownWrapper}>
       <select
+        data-testid='dropdown'
         onChange={(e) => handleDispatchEventsOnSelect(e.target.value)}
         className={styles.dropDownBtn}
       >

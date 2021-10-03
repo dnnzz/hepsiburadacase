@@ -3,6 +3,7 @@ import styles from "./ProductList.module.css";
 import SingleProduct from "../SingleProduct/SingleProduct";
 import { AppState } from "../Context/Context";
 import { sortAlphabetically, sortByPrice } from "../../utils/utils";
+import Pagination from "./Pagination";
 
 export default function ProductList() {
   const {
@@ -16,6 +17,8 @@ export default function ProductList() {
     },
   } = AppState();
   const [productList, setProductList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productPerPage] = useState(12);
 
   const sortProducts = () => {
     switch (true) {
@@ -33,6 +36,10 @@ export default function ProductList() {
     }
   };
 
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   useEffect(() => {
     if (filteredProducts.length > 0) {
       setProductList(filteredProducts);
@@ -41,21 +48,31 @@ export default function ProductList() {
     }
   }, [products, filteredProducts]);
 
+  const indexOfLastProduct = currentPage * productPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productPerPage;
+
   return (
-    <div className={styles.gridLayout}>
-      {sortProducts()
-        .slice(0, 12)
-        .map((product) => (
-          <SingleProduct
-            key={product.productId}
-            productId={product.productId}
-            title={product.title}
-            brand={product.brand}
-            price={product.price}
-            discountPercentage={product.discountPercentage}
-            color={product.color}
-          />
-        ))}
-    </div>
+    <>
+      <div className={styles.gridLayout}>
+        {sortProducts()
+          .slice(indexOfFirstProduct, indexOfLastProduct)
+          .map((product) => (
+            <SingleProduct
+              key={product.productId}
+              productId={product.productId}
+              title={product.title}
+              brand={product.brand}
+              price={product.price}
+              discountPercentage={product.discountPercentage}
+              color={product.color}
+            />
+          ))}
+        <Pagination
+          productPerPage={productPerPage}
+          totalProducts={sortProducts().length}
+          paginate={paginate}
+        />
+      </div>
+    </>
   );
 }

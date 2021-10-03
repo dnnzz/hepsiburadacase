@@ -36,18 +36,22 @@ export const sortByPrice = (productList, isAsc) => {
 // if user selects (Z>A) reverses array.
 export const sortAlphabetically = (productList, isAsc) => {
   if (isAsc) {
-    return productList.sort(
-      (a, b) =>
-        new Date(parseDate(a.createdDate)) - new Date(parseDate(b.createdDate)) &&
-        (a["title"].toLowerCase() < b["title"].toLowerCase() ? -1 : 1),
-    );
+    return productList.sort(function (a, b) {
+      var adate = new Date(a.createdDate);
+      var bdate = new Date(b.createdDate);
+      var rv = adate - bdate;
+      if (rv === 0) rv = a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+      return rv;
+    });
   } else {
     return productList
-      .sort(
-        (a, b) =>
-          new Date(parseDate(a.createdDate)) - new Date(parseDate(b.createdDate)) &&
-          (a["title"] < b["title"] ? -1 : 1),
-      )
+      .sort(function (a, b) {
+        var adate = new Date(a.createdDate);
+        var bdate = new Date(b.createdDate);
+        var rv = adate - bdate;
+        if (rv === 0) rv = b.title.toLowerCase().localeCompare(a.title.toLowerCase());
+        return rv;
+      })
       .reverse();
   }
 };
@@ -83,5 +87,5 @@ export const filterProducts = (products, byColor, byBrand) => {
 };
 
 export const filterBySearchQuery = (products, query) => {
-  return products.filter((product) => product.title.toLowerCase().includes(query));
+  return products.filter((product) => product.title.toLowerCase().includes(query.toLowerCase()));
 };

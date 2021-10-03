@@ -281,11 +281,11 @@ export const products = [
   },
   {
     productId: 32,
-    title: "Xiaomi KırmızıMi 9T ",
+    title: "Xiaomi Mi 9T ",
     brand: "Xiaomi",
     price: 1285,
     discountPercentage: 30,
     color: "Kırmızı",
-    createdDate: "2021-04-05T01:00:00+03:00",
+    createdDate: "2021-12-12T01:00:00+03:00",
   },
 ];

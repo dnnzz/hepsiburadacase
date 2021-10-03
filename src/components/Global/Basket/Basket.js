@@ -61,7 +61,7 @@ export default function Basket() {
   return (
     <div className={styles.basketWrapper}>
       <button
-        data-test='basketButton'
+        data-testid='basket-button'
         type='button'
         onMouseOver={handleMouseOver}
         className={styles.basket}
@@ -77,7 +77,7 @@ export default function Basket() {
       </button>
       {isHovering && (
         <div
-          id='mini-cart'
+          data-testid='mini-cart'
           onMouseOver={handleMouseOver}
           onMouseLeave={handleMouseOut}
           className={styles.miniCart}

@@ -11,6 +11,22 @@
     ". . . .";
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.pageItem,
+.pageItemActive {
+  width: 33px;
+  height: 33px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  border-radius: 9px;
+  margin-left: 13.2px;
+}
+
 @media (min-width: 1900px) {
   .gridLayout {
     gap: 17px 157px;
