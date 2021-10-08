@@ -1,6 +1,6 @@
 # Hepsiburada case study
 
-Search page design given by hepsiburada [https://ecstatic-bhaskara-026a35.netlify.app](https://ecstatic-bhaskara-026a35.netlify.app).
+Search page design given by hepsiburada [Live demo](https://ecstatic-bhaskara-026a35.netlify.app).
 For best page experience i suggest (1920x1080) screen.
 
 ### Requirements:
