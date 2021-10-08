@@ -29,13 +29,16 @@ export default function SearchBox() {
         <label>
           <input
             type='text'
+            data-testid='search-box'
             onChange={(e) => setQuery(e.target.value)}
             placeholder={"25 milyon'dan fazla ürün içerisinde ara"}
           />
         </label>
       </form>
       {query.length === 1 && (
-        <p style={{ color: "red", fontSize: "10px" }}>En az 2 karakter girmelisiniz</p>
+        <p data-testid='error-msg' style={{ color: "red", fontSize: "10px" }}>
+          En az 2 karakter girmelisiniz
+        </p>
       )}
     </div>
   );

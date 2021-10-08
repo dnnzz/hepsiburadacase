@@ -16,3 +16,9 @@
   text-align: center;
   text-indent: -15%;
 }
+
+@media (max-width: 1420px) {
+  .dropDownWrapper {
+    margin-right: 70px;
+  }
+}

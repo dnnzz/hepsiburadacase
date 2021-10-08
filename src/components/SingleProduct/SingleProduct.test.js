@@ -1,11 +1,11 @@
 import React from "react";
 
 import { render, screen } from "@testing-library/react";
-import { AppContext } from "../../Context/Context";
+import { AppContext } from "../Context/Context";
 import "@testing-library/jest-dom";
-import Sidebar from "./Sidebar";
 
-import { products } from "../../../data/data";
+import { products } from "../../data/data";
+import SingleProduct from "./SingleProduct";
 
 const testState = {
   products: products,
@@ -25,26 +25,32 @@ const testState = {
   searchQuery: "",
 };
 
-function renderSidebar() {
+function renderSingleProduct() {
   const dispatch = jest.fn();
   const productDispatch = jest.fn();
   return render(
     <AppContext.Provider
       value={{
-        state: { cart: [] },
+        state: {
+          cart: [
+            {
+              productId: 2,
+              title: "Apple iPhone 11 Yeşil",
+              addedDate: "2021-10-08T12:17:14.439Z",
+            },
+          ],
+        },
         dispatch: dispatch,
         productState: testState,
         productDispatch: productDispatch,
       }}
     >
-      <Sidebar />
+      <SingleProduct />
     </AppContext.Provider>,
   );
 }
-describe("should render sidebar", () => {
-  it("renders sidebar to screen", () => {
-    renderSidebar();
-    const sideBar = screen.getByTestId("sidebar");
-    expect(sideBar).toBeInTheDocument();
+describe("should render singleProduct", () => {
+  it("renders singleProduct", () => {
+    renderSingleProduct();
   });
 });

@@ -54,7 +54,7 @@ export default function Sidebar() {
   }, [products, filteredProducts]);
 
   return (
-    <div className={styles.sidebarWrapper}>
+    <div data-testid='sidebar' className={styles.sidebarWrapper}>
       <h5>Renk</h5>
       <ul>
         {/* Takes colorQty state and prints key&values to filter section */}

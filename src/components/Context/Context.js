@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 import { cartReducer, productReducer } from "./Reducers";
 
-const AppContext = createContext();
+export const AppContext = createContext();
 
 const products = JSON.parse(localStorage.getItem("productList"));
 const cart = JSON.parse(localStorage.getItem("cart"));

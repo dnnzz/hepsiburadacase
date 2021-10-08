@@ -2,36 +2,63 @@ import React from "react";
 
 import { render, fireEvent, screen, getByText } from "@testing-library/react";
 import Basket from "../Basket/Basket";
-import { Context, initialProductState, initialCartState } from "../../Context/Context";
+import { AppContext } from "../../Context/Context";
+import { products } from "../../../data/data";
+
+const testState = {
+  products: products,
+  filteredProducts: [],
+  byColor: {
+    selected: false,
+    color: "Siyah",
+  },
+  byBrand: {
+    selected: false,
+    brand: "Apple",
+  },
+  sortByPriceAsc: false,
+  sortByPriceDesc: false,
+  sortByNewAsc: false,
+  sortByNewDesc: false,
+  searchQuery: "",
+};
+
+function renderBasket() {
+  const dispatch = jest.fn();
+  const productDispatch = jest.fn();
+  return render(
+    <AppContext.Provider
+      value={{
+        state: {
+          cart: [
+            {
+              productId: 2,
+              title: "Apple iPhone 11 Yeşil",
+              addedDate: "2021-10-08T12:17:14.439Z",
+            },
+          ],
+        },
+        dispatch: dispatch,
+        productState: testState,
+        productDispatch: productDispatch,
+      }}
+    >
+      <Basket />
+    </AppContext.Provider>,
+  );
+}
 
 describe("should hover and render mini basket to screen and remove product in cart", () => {
-  it("is remove product in cart", () => {
-    const dispatch = jest.fn();
-
-    const productDispatch = jest.fn();
-
-    const testCartState = [
-      {
-        productId: 2,
-        title: "Apple iPhone 11 Yeşil",
-        addedDate: "Thu Oct 07 2021 19:49:48 GMT+0300 (GMT+03:00)",
-      },
-    ];
-
-    const { getByTestId } = render(
-      <Context
-        testDispatch={dispatch}
-        testState={testCartState}
-        testProductDispatch={productDispatch}
-        testProductState={initialProductState}
-      >
-        <Basket />
-      </Context>,
-    );
-    const button = getByTestId("basket-button");
+  it("is removing product in cart", () => {
+    renderBasket();
+    const button = screen.getByTestId("basket-button");
     fireEvent.mouseOver(button);
     expect(screen.getByTestId("mini-cart")).toBeInTheDocument();
-
-    expect(screen.getByTestId("remove-button")).toBeInTheDocument();
+    const removeBtn = screen.getByTestId("remove-button");
+    expect(removeBtn).toBeInTheDocument();
+    fireEvent.click(removeBtn);
+    expect(screen.getByTestId("modal")).toBeInTheDocument();
+    const yesBtn = screen.getByTestId("modal-yes-btn");
+    fireEvent.click(yesBtn);
   });
 });

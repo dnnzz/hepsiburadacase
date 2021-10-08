@@ -53,7 +53,7 @@ export default function ProductList() {
 
   return (
     <>
-      <div className={styles.gridLayout}>
+      <div data-testid='productlist' className={styles.gridLayout}>
         {sortProducts()
           .slice(indexOfFirstProduct, indexOfLastProduct)
           .map((product) => (

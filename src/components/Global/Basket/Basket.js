@@ -89,7 +89,7 @@ export default function Basket() {
       <div id='modal'>
         {showModal ? (
           <Modal>
-            <div>
+            <div data-testid='modal'>
               <h1>Ürünü silmek istediğinize emin misiniz ?</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -98,11 +98,15 @@ export default function Basket() {
                 It has survived not only five centuries, but also the leap into electronic
                 typesetting, remaining essentiall....
               </p>
-              <div className='buttons'>
+              <div data-testid='modal-no-btn' className='buttons'>
                 <button className='noBtn' onClick={(e) => setShowModal(false)}>
                   Hayır
                 </button>
-                <button className='yesBtn' onClick={(e) => handleClick(selectedProductId)}>
+                <button
+                  data-testid='modal-yes-btn'
+                  className='yesBtn'
+                  onClick={(e) => handleClick(selectedProductId)}
+                >
                   Evet
                 </button>
               </div>
