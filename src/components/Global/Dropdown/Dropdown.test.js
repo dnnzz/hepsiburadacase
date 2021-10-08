@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, screen, getByText } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Dropdown from "./Dropdown";
 import { Context, initialCartState, initialProductState } from "../../Context/Context";
 import userEvent from "@testing-library/user-event";

@@ -47,6 +47,7 @@ export default function Basket() {
                   setSelectedProductId(product.productId);
                 }}
                 type='button'
+                data-testid='remove-button'
                 className={styles.deleteBtn}
               >
                 <span>Kaldır</span>

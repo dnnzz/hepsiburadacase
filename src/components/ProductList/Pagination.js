@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import styles from "./ProductList.module.css";
 
+/* if only one page exist do not display pagination */
+
 const Pagination = ({ productPerPage, totalProducts, paginate }) => {
   const pageNumbers = [];
   const [currentNumber, setCurrentNumber] = useState(1);
@@ -11,7 +13,10 @@ const Pagination = ({ productPerPage, totalProducts, paginate }) => {
 
   return (
     <nav>
-      <ul style={{ display: "flex", justifyContent: "center" }} className={styles.pagination}>
+      <ul
+        style={{ position: "absolute", display: "flex", justifyContent: "center" }}
+        className={styles.pagination}
+      >
         <button
           onClick={() => {
             if (currentNumber > 1) {
