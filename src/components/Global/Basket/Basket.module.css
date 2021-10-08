@@ -115,4 +115,7 @@
   .basket {
     margin-left: -140px;
   }
+  .miniCart {
+    transform: translateX(-106.1%);
+  }
 }
