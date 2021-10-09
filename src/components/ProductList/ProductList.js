@@ -69,7 +69,7 @@ export default function ProductList() {
           ))}
         <Pagination
           productPerPage={productPerPage}
-          totalProducts={sortProducts().length}
+          totalProducts={productList.length}
           paginate={paginate}
         />
       </div>

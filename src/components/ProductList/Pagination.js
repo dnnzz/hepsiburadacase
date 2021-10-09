@@ -8,9 +8,12 @@ const Pagination = ({ productPerPage, totalProducts, paginate }) => {
   for (let i = 1; i <= Math.ceil(totalProducts / productPerPage); i++) {
     pageNumbers.push(i);
   }
-
+  if (pageNumbers.length < 2) {
+    return null;
+  }
   return (
     <nav>
+      {console.log(pageNumbers)}
       <ul
         data-testid='pagination'
         style={{ position: "absolute", display: "flex", justifyContent: "center" }}
