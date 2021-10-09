@@ -24,7 +24,7 @@ export default function Sidebar() {
   useEffect(() => {
     let payloadVal;
     if (filteredProducts.length > 0) {
-      payloadVal = filterProducts(products, byColor, byBrand);
+      payloadVal = filterProducts(filteredProducts, byColor, byBrand);
       productDispatch({
         type: "FILTER_PRODUCTS",
         payload: payloadVal,
