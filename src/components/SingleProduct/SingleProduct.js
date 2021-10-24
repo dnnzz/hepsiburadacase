@@ -21,11 +21,12 @@ export default function SingleProduct({
   const addToBasketButton = (
     <div className={styles.buttonWrapper}>
       {cart.some((product) => product["productId"] === productId) ? (
-        <button disabled className={styles.addButtonPassive}>
+        <button data-testid="disabled-btn" disabled className={styles.addButtonPassive}>
           Bu ürünü sepete ekleyemezsiniz.
         </button>
       ) : (
         <button
+        data-testid="addToCart-btn"
           onClick={(e) => {
             dispatch({
               type: "ADD_TO_CART",
@@ -42,6 +43,7 @@ export default function SingleProduct({
 
   return (
     <div
+    data-testid={`test-${productId}`}
       className={styles.singleProductContainer}
       onMouseEnter={(e) => setIsHovering(true)}
       onMouseLeave={(e) => setIsHovering(false)}

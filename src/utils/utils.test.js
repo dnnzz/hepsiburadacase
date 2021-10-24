@@ -3,9 +3,8 @@ import {
   filterProducts,
   sortAlphabetically,
   sortByPrice,
-  getCountByProperty,
 } from "./utils";
-import { mockAscData, mockDescData } from "../data/mockData";
+import { mockAscData, mockDescData } from "../../public/data/mockData";
 const products = [
   {
     productId: 2,

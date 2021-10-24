@@ -1,10 +1,11 @@
 import React from "react";
 
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent} from "@testing-library/react";
+import userEvent  from "@testing-library/user-event";
 import { AppContext } from "../Context/Context";
 import "@testing-library/jest-dom";
 
-import { products } from "../../data/data";
+import { products } from "../../../public/data/data";
 import SingleProduct from "./SingleProduct";
 
 const testState = {
@@ -45,12 +46,24 @@ function renderSingleProduct() {
         productDispatch: productDispatch,
       }}
     >
-      <SingleProduct />
+      <SingleProduct key={1}
+      productId={1}
+      title={"Iphone 11"}
+      brand={"Apple"}
+      price={570}
+      discountPercentage={10}
+      color={"Siyah"} />
     </AppContext.Provider>,
   );
 }
 describe("should render singleProduct", () => {
-  it("renders singleProduct", () => {
-    renderSingleProduct();
+  beforeEach(() => renderSingleProduct())
+  it("checks singleProduct rendered correctly", () => {
+    expect(screen.getByText("Iphone 11")).toBeInTheDocument();
   });
+  it("checks hoverEffect working correctly",()=>{
+    const element = screen.getByTestId("test-1");
+    fireEvent.mouseOver(element);
+    expect(screen.getByTestId("addToCart-btn")).toBeInTheDocument();
+  })
 });

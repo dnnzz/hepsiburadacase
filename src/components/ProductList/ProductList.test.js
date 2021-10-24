@@ -1,12 +1,11 @@
 import React from "react";
 
-import { render, screen } from "@testing-library/react";
-import { AppContext } from "../Context/Context";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { Context } from "../Context/Context";
 import "@testing-library/jest-dom";
 import ProductList from "./ProductList";
-
-import { products } from "../../data/data";
-
+import {products} from '../../data/data';
+import userEvent from "@testing-library/user-event";
 const testState = {
   products: products,
   filteredProducts: [],
@@ -18,44 +17,45 @@ const testState = {
     selected: false,
     brand: "Apple",
   },
-  sortByPriceAsc: false,
+  sortByPriceAsc: true,
   sortByPriceDesc: false,
   sortByNewAsc: false,
   sortByNewDesc: false,
   searchQuery: "",
 };
-
+const dispatch = jest.fn();
+const productDispatch = jest.fn();
 function renderProductList() {
-  const dispatch = jest.fn();
-  const productDispatch = jest.fn();
   return render(
-    <AppContext.Provider
-      value={{
-        state: {
-          cart: [
-            {
-              productId: 2,
-              title: "Apple iPhone 11 Yeşil",
-              addedDate: "2021-10-08T12:17:14.439Z",
-            },
-          ],
-        },
-        dispatch: dispatch,
-        productState: testState,
-        productDispatch: productDispatch,
-      }}
-    >
-      <ProductList />
-    </AppContext.Provider>,
+    <Context
+    testDispatch={dispatch}
+    testState={{cart:[]}}
+    testproductDispatch={productDispatch}
+    testProductState={testState}
+  >
+    <ProductList />
+  </Context>,
   );
 }
 
 describe("should render productlist", () => {
+  beforeEach(() => renderProductList())
   it("renders productlist to screen & pagination", () => {
-    renderProductList();
-    const sideBar = screen.getByTestId("productlist");
-    expect(sideBar).toBeInTheDocument();
+    const productList = screen.getByTestId("productlist");
+    expect(productList).toBeInTheDocument();
     const pagination = screen.getByTestId("pagination");
     expect(pagination).toBeInTheDocument();
   });
+  it("click add to basket button and dispatch action",()=>{
+    const product = screen.getByTestId("test-1");
+    expect(product).toBeInTheDocument();
+    fireEvent.mouseOver(product);
+    const addToCartButton = screen.getByTestId("addToCart-btn")
+    expect(addToCartButton).toBeInTheDocument();
+    userEvent.click(addToCartButton);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: "ADD_TO_CART",
+      payload: { productId: 1, title: "Apple iPhone 11 Siyah" },
+    })
+  })
 });

@@ -1,11 +1,11 @@
 import React from "react";
 
-import { render, screen } from "@testing-library/react";
-import { AppContext } from "../../Context/Context";
+import { render, screen} from "@testing-library/react";
+import { Context } from "../../Context/Context";
 import "@testing-library/jest-dom";
 import Sidebar from "./Sidebar";
-
-import { products } from "../../../data/data";
+import {products} from '../../../data/data';
+import userEvent from "@testing-library/user-event";
 
 const testState = {
   products: products,
@@ -24,27 +24,46 @@ const testState = {
   sortByNewDesc: false,
   searchQuery: "",
 };
-
+const dispatch = jest.fn();
+const productDispatch = jest.fn();
 function renderSidebar() {
-  const dispatch = jest.fn();
-  const productDispatch = jest.fn();
+  
   return render(
-    <AppContext.Provider
-      value={{
-        state: { cart: [] },
-        dispatch: dispatch,
-        productState: testState,
-        productDispatch: productDispatch,
-      }}
-    >
-      <Sidebar />
-    </AppContext.Provider>,
+    <Context
+    testDispatch={dispatch}
+    testState={{cart:[]}}
+    testproductDispatch={productDispatch}
+    testProductState={testState}
+  >
+    <Sidebar />
+  </Context>,
   );
 }
-describe("should render sidebar", () => {
+
+describe("sidebar tests", () => {
+  beforeEach(()=> renderSidebar())
   it("renders sidebar to screen", () => {
-    renderSidebar();
-    const sideBar = screen.getByTestId("sidebar");
-    expect(sideBar).toBeInTheDocument();
+    expect(screen.getByTestId("sidebar")).toBeInTheDocument();
   });
+  it("clicks filterbycolor and dispatch action",()=>{
+    const filterButton = screen.getByTestId("Siyah");
+    userEvent.click(filterButton);
+    expect(productDispatch).toHaveBeenCalledWith({ type: "FILTER_BY_COLOR" , payload: {
+      color: "Siyah",
+      selected: true,
+    }});
+  })
+  it("clicks filterbybrand and dispatch action",()=>{
+    const filterButton = screen.getByTestId("Apple");
+    userEvent.click(filterButton);
+    expect(productDispatch).toHaveBeenCalledWith({ type: "FILTER_BY_BRAND" , payload: {
+      brand: "Apple",
+      selected: true,
+    }});
+  })
+  it("clicks sortelement and dispatch action",()=>{
+    const sortButton = screen.getByTestId("sortByPriceAsc");
+    userEvent.click(sortButton);
+    expect(productDispatch).toHaveBeenCalledWith({type:"SORT_BY_PRICE_ASC"})
+  })
 });

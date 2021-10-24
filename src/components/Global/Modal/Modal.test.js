@@ -1,9 +1,9 @@
 import React from "react";
 
-import { render, fireEvent, screen, getByText } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import Basket from "../Basket/Basket";
 import { AppContext } from "../../Context/Context";
-import { products } from "../../../data/data";
+import { products } from "../../../../public/data/data";
 
 const testState = {
   products: products,

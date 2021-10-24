@@ -56,7 +56,7 @@ export default function Sidebar() {
   return (
     <div data-testid='sidebar' className={styles.sidebarWrapper}>
       <h5>Renk</h5>
-      <ul>
+      <ul aria-labelledby="colorfilters">
         {/* Takes colorQty state and prints key&values to filter section */}
         {/* if User click again on same filter key - filter will be removed at reducer  
             Check happens here -> byColor.selected && byColor.color === key  
@@ -66,6 +66,7 @@ export default function Sidebar() {
         {Object.entries(colorQty).map(([key, value]) => {
           return (
             <li
+              data-testid={key}
               onClick={(e) => {
                 byColor.selected && byColor.color === key
                   ? productDispatch({
@@ -93,6 +94,7 @@ export default function Sidebar() {
       <h5>Sıralama</h5>
       <ul>
         <li
+        data-testid = "sortByPriceAsc"
           onClick={(e) => {
             handleClickSortElements("SORT_BY_PRICE_ASC");
           }}
@@ -131,6 +133,7 @@ export default function Sidebar() {
         {Object.entries(brandQty).map(([key, value]) => {
           return (
             <li
+              data-testid = {key}
               onClick={(e) => {
                 byBrand.selected && byBrand.brand === key
                   ? productDispatch({
