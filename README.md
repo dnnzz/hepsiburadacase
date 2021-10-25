@@ -75,3 +75,10 @@ yarn build
 ```
 yarn test
 ```
+
+
+<br/>
+
+## Lighthouse report
+![lighthouse report](https://i.ibb.co/R4RnSSW/Ekran-Resmi-2021-10-25-14-42-26.png)
+

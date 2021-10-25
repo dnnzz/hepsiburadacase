@@ -13,13 +13,12 @@ const Pagination = ({ productPerPage, totalProducts, paginate }) => {
   }
   return (
     <nav>
-      {console.log(pageNumbers)}
       <ul
         data-testid='pagination'
-        style={{ position: "absolute", display: "flex", justifyContent: "center" }}
         className={styles.pagination}
       >
         <button
+          id="back-btn"
           onClick={() => {
             if (currentNumber > 1) {
               setCurrentNumber(currentNumber - 1);
@@ -35,6 +34,7 @@ const Pagination = ({ productPerPage, totalProducts, paginate }) => {
         {pageNumbers.map((number) => (
           <li key={number}>
             <button
+              id={`btn-${number}`}
               onClick={() => {
                 setCurrentNumber(number);
                 paginate(number);
@@ -46,6 +46,7 @@ const Pagination = ({ productPerPage, totalProducts, paginate }) => {
           </li>
         ))}
         <button
+          id="next-btn"
           onClick={() => {
             if (currentNumber < pageNumbers.length) {
               setCurrentNumber(currentNumber + 1);
