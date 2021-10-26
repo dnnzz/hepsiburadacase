@@ -65,6 +65,7 @@ export default function ProductList() {
               price={product.price}
               discountPercentage={product.discountPercentage}
               color={product.color}
+              productPhoto={product.productPhoto}
             />
           ))}
         <Pagination

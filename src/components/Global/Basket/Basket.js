@@ -65,13 +65,7 @@ export default function Basket() {
         data-testid='basket-button'
         type='button'
         onMouseOver={handleMouseOver}
-        className={styles.basket}
-        // inline styling ..
-        style={
-          isHovering
-            ? { borderBottom: "0", borderBottomLeftRadius: "0", borderBottomRightRadius: "0" }
-            : {}
-        }
+        className={isHovering ? styles.basketHovering :styles.basket}
       >
         <span className={styles.text}>Sepetim</span>
         <span className={styles.badge}>{cart.length}</span>

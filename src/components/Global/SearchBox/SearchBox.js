@@ -36,7 +36,7 @@ export default function SearchBox() {
         </label>
       </form>
       {query.length === 1 && (
-        <p data-testid='error-msg' style={{ color: "red", fontSize: "10px" }}>
+        <p data-testid='error-msg' className={styles.errorMsg}>
           En az 2 karakter girmelisiniz
         </p>
       )}

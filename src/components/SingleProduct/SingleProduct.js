@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./SingleProduct.module.css";
-import mockPhoto from "./img.png";
 import ProductPrice from "./ProductPrice";
 import { AppState } from "../Context/Context";
 
@@ -11,6 +10,7 @@ export default function SingleProduct({
   price,
   discountPercentage,
   color,
+  productPhoto
 }) {
   const {
     state: { cart },
@@ -43,19 +43,18 @@ export default function SingleProduct({
 
   return (
     <div
-    data-testid={`test-${productId}`}
+      data-testid={`test-${productId}`}
       className={styles.singleProductContainer}
       onMouseEnter={(e) => setIsHovering(true)}
       onMouseLeave={(e) => setIsHovering(false)}
     >
       <div className={styles.card}>
-        <div className={styles.cardImage} style={isHovering ? { border: "none" } : {}}>
-          <img src={mockPhoto} alt='product' />
+        <div className={isHovering ? styles.cardImageHover : styles.cardImage} >
+          <img src={productPhoto} alt='product' />
         </div>
-        <div className={styles.cardBody} style={isHovering ? { display: "none" } : {}}>
+        <div className={isHovering  ? styles.cardBodyHovering : styles.cardBody}>
           <h6
-            className={styles.cardTitle}
-            style={discountPercentage === 0 ? { marginTop: "0.4vh" } : {}}
+            className={discountPercentage === 0 ? styles.discountlessCardTitle : styles.cardTitle}
           >
             {title}
           </h6>
@@ -64,7 +63,7 @@ export default function SingleProduct({
               <b>Marka:</b>
               {brand}
             </p>
-            <p className={styles.productInfo} style={{ marginTop: "-7px" }}>
+            <p className={styles.productInfo}>
               <b>Renk:</b>
               {color}
             </p>

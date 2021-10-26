@@ -15,6 +15,21 @@
   align-items: center;
   justify-content: center;
 }
+.basketHovering{
+  position: relative;
+  color: #b0b0b0;
+  border: 1px solid #b0b0b0;
+  border-radius: 4px;
+  background-color: white;
+  height: 48px;
+  width: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
 .text {
   font-size: 17px;
   line-height: 24px;

@@ -51,8 +51,6 @@ const Pagination = ({ productPerPage, totalProducts, paginate }) => {
             if (currentNumber < pageNumbers.length) {
               setCurrentNumber(currentNumber + 1);
               paginate(currentNumber + 1);
-            } else {
-              return;
             }
           }}
           className={styles.pageItem}

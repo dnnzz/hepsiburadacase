@@ -76,9 +76,19 @@ yarn build
 yarn test
 ```
 
+- To run all tests with coverage
+
+```
+yarn test --watchAll=false --coverage
+```
+
 
 <br/>
 
 ## Lighthouse report
 ![lighthouse report](https://i.ibb.co/R4RnSSW/Ekran-Resmi-2021-10-25-14-42-26.png)
+
+
+## Coverage report
+![coverage report](https://i.ibb.co/5YL5JNx/Ekran-Resmi-2021-10-26-13-51-21.png)
 
