@@ -7,6 +7,7 @@ export const products = [
     price: 120,
     discountPercentage: 10,
     color: "Siyah",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
     createdDate: "2021-04-15T01:00:00+03:00",
   },
   {
@@ -16,6 +17,7 @@ export const products = [
     price: 1120,
     discountPercentage: 0,
     color: "Yeşil",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-11-16T01:00:00+03:00",
   },
   {
@@ -25,6 +27,7 @@ export const products = [
     price: 300,
     discountPercentage: 20,
     color: "Beyaz",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
     createdDate: "2021-07-17T01:00:00+03:00",
   },
   {
@@ -34,6 +37,7 @@ export const products = [
     price: 310,
     discountPercentage: 10,
     color: "Kırmızı",
+    productPhoto:"https://i.ibb.co/4jsB5ht/image-4.png",
     createdDate: "2021-08-18T01:00:00+03:00",
   },
   {
@@ -43,6 +47,7 @@ export const products = [
     price: 322,
     discountPercentage: 10,
     color: "Kırmızı",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-01-25T01:00:00+03:00",
   },
   {
@@ -52,6 +57,7 @@ export const products = [
     price: 572,
     discountPercentage: 10,
     color: "Mavi",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
     createdDate: "2021-02-05T05:00:00+03:00",
   },
   {
@@ -61,6 +67,7 @@ export const products = [
     price: 521,
     discountPercentage: 10,
     color: "Beyaz",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-03-02T08:00:00+03:00",
   },
   {
@@ -70,6 +77,7 @@ export const products = [
     price: 500,
     discountPercentage: 25,
     color: "Mor",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
     createdDate: "2020-01-03T01:00:00+03:00",
   },
   {
@@ -79,6 +87,7 @@ export const products = [
     price: 50,
     discountPercentage: 20,
     color: "Siyah",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
     createdDate: "2021-02-19T01:00:00+03:00",
   },
   {
@@ -88,6 +97,7 @@ export const products = [
     price: 585,
     discountPercentage: 30,
     color: "Kırmızı",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-04-05T01:00:00+03:00",
   },
   {
@@ -97,6 +107,7 @@ export const products = [
     price: 170,
     discountPercentage: 10,
     color: "Siyah",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
     createdDate: "2021-02-10T01:00:00+03:00",
   },
   {
@@ -106,6 +117,7 @@ export const products = [
     price: 1760,
     discountPercentage: 0,
     color: "Yeşil",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
     createdDate: "2021-02-11T01:00:00+03:00",
   },
   {
@@ -115,6 +127,7 @@ export const products = [
     price: 200,
     discountPercentage: 20,
     color: "Beyaz",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-02-13T01:00:00+03:00",
   },
   {
@@ -124,6 +137,7 @@ export const products = [
     price: 475,
     discountPercentage: 10,
     color: "Siyah",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
     createdDate: "2021-02-14T01:00:00+03:00",
   },
   {
@@ -133,6 +147,7 @@ export const products = [
     price: 500,
     discountPercentage: 10,
     color: "Kırmızı",
+    productPhoto:"https://i.ibb.co/4jsB5ht/image-4.png",
     createdDate: "2021-01-01T01:00:00+03:00",
   },
   {
@@ -142,6 +157,7 @@ export const products = [
     price: 500,
     discountPercentage: 10,
     color: "Mavi",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-04-16T05:00:00+03:00",
   },
   {
@@ -151,6 +167,7 @@ export const products = [
     price: 500,
     discountPercentage: 10,
     color: "Kırmızı",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
     createdDate: "2021-06-17T08:00:00+03:00",
   },
   {
@@ -160,6 +177,7 @@ export const products = [
     price: 500,
     discountPercentage: 25,
     color: "Siyah",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
     createdDate: "2021-02-18T01:00:00+03:00",
   },
   {
@@ -169,6 +187,7 @@ export const products = [
     price: 500,
     discountPercentage: 20,
     color: "Beyaz",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
     createdDate: "2021-02-19T01:00:00+03:00",
   },
   {
@@ -178,6 +197,7 @@ export const products = [
     price: 500,
     discountPercentage: 30,
     color: "Gri",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-02-20T01:00:00+03:00",
   },
   {
@@ -187,6 +207,7 @@ export const products = [
     price: 120,
     discountPercentage: 10,
     color: "Siyah",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
     createdDate: "2021-01-15T01:00:00+03:00",
   },
   {
@@ -196,6 +217,7 @@ export const products = [
     price: 1026,
     discountPercentage: 0,
     color: "Yeşil",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
     createdDate: "2021-01-16T01:00:00+03:00",
   },
   {
@@ -205,6 +227,7 @@ export const products = [
     price: 1220,
     discountPercentage: 11,
     color: "Beyaz",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-01-17T01:00:00+03:00",
   },
   {
@@ -214,6 +237,7 @@ export const products = [
     price: 310,
     discountPercentage: 13,
     color: "Kırmızı",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
     createdDate: "2021-03-02T01:00:00+03:00",
   },
   {
@@ -223,6 +247,7 @@ export const products = [
     price: 322,
     discountPercentage: 0,
     color: "Kırmızı",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
     createdDate: "2021-03-04T01:00:00+03:00",
   },
   {
@@ -232,6 +257,7 @@ export const products = [
     price: 572,
     discountPercentage: 15,
     color: "Mavi",
+    productPhoto:"https://i.ibb.co/4jsB5ht/image-4.png",
     createdDate: "2021-03-05T05:00:00+03:00",
   },
   {
@@ -241,6 +267,7 @@ export const products = [
     price: 521,
     discountPercentage: 10,
     color: "Beyaz",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-03-06T08:00:00+03:00",
   },
   {
@@ -250,6 +277,7 @@ export const products = [
     price: 410,
     discountPercentage: 25,
     color: "Mor",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
     createdDate: "2021-03-08T01:00:00+03:00",
   },
   {
@@ -259,6 +287,7 @@ export const products = [
     price: 20,
     discountPercentage: 20,
     color: "Siyah",
+    productPhoto:"https://i.ibb.co/4jsB5ht/image-4.png",
     createdDate: "2021-03-12T01:00:00+03:00",
   },
   {
@@ -268,6 +297,7 @@ export const products = [
     price: 285,
     discountPercentage: 30,
     color: "Kırmızı",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-03-15T01:00:00+03:00",
   },
   {
@@ -277,6 +307,7 @@ export const products = [
     price: 26,
     discountPercentage: 8,
     color: "Siyah",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
     createdDate: "2021-04-10T01:00:00+03:00",
   },
   {
@@ -286,8 +317,50 @@ export const products = [
     price: 1285,
     discountPercentage: 30,
     color: "Kırmızı",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
     createdDate: "2021-12-12T01:00:00+03:00",
   },
+  {
+    productId: 33,
+    title: "iPhone 4S Siyah",
+    brand: "Apple",
+    price: 1250,
+    discountPercentage: 5,
+    color: "Siyah",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
+    createdDate: "2021-12-12T01:00:00+03:00",
+  },
+  {
+    productId: 34,
+    title: "Samsung E250 Mavi",
+    brand: "Samsung",
+    price: 650,
+    discountPercentage: 10,
+    color: "Mavi",
+    productPhoto:"https://i.ibb.co/pKSBRpr/image-1.png",
+    createdDate: "2021-10-16T01:00:00+03:00",
+  },
+  {
+    productId: 35,
+    title: "Sony Express Music Beyaz",
+    brand: "Sony",
+    price: 1360,
+    discountPercentage: 25,
+    color: "Beyaz",
+    productPhoto:"https://i.ibb.co/92xRQ6g/image-3.png",
+    createdDate: "2021-12-20T01:00:00+03:00",
+  },
+  {
+    productId: 36,
+    title: "LG G4 Beat Siyah",
+    brand: "LG",
+    price: 1500,
+    discountPercentage: 7,
+    color: "Sİyah",
+    productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
+    createdDate: "2021-11-12T01:00:00+03:00",
+  },
 ];
+
 window.localStorage.setItem("productList", JSON.stringify(products));
 window.localStorage.setItem("cart", JSON.stringify([]));
