@@ -47,6 +47,7 @@ describe("tests for useReducer hook",()=>{
             price: 26,
             discountPercentage: 8,
             color: "Siyah",
+            productPhoto: "https://i.ibb.co/pKSBRpr/image-1.png",
             createdDate: "2021-04-10T01:00:00+03:00",
           }])
 

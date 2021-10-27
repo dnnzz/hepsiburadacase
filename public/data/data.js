@@ -355,10 +355,9 @@ const products = [
     brand: "LG",
     price: 1500,
     discountPercentage: 7,
-    color: "Sİyah",
+    color: "Siyah",
     productPhoto:"https://i.ibb.co/Yyk7p3C/image-2.png",
     createdDate: "2021-11-12T01:00:00+03:00",
   },
 ];
 window.localStorage.setItem("productList", JSON.stringify(products));
-window.localStorage.setItem("cart", JSON.stringify([]));

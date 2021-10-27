@@ -18,8 +18,9 @@ export default function SingleProduct({
   } = AppState();
 
   const [isHovering, setIsHovering] = useState(false);
-  const addToBasketButton = (
+  const addToBasketButton =(title) => (
     <div className={styles.buttonWrapper}>
+      <h6 className={styles.cardTitleHover}>{title}</h6>
       {cart.some((product) => product["productId"] === productId) ? (
         <button data-testid="disabled-btn" disabled className={styles.addButtonPassive}>
           Bu ürünü sepete ekleyemezsiniz.
@@ -72,7 +73,7 @@ export default function SingleProduct({
             <ProductPrice price={price} discountPercentage={discountPercentage} />
           </div>
         </div>
-        {isHovering && addToBasketButton}
+        {isHovering && addToBasketButton(title)}
       </div>
     </div>
   );
