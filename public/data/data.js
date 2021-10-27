@@ -361,4 +361,3 @@ const products = [
   },
 ];
 window.localStorage.setItem("productList", JSON.stringify(products));
-window.localStorage.setItem("cart", JSON.stringify([]));
