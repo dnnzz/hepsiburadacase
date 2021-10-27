@@ -66,7 +66,7 @@ export default function SingleProduct({
               <b>Marka:</b>
               {brand}
             </p>
-            <p className={styles.productInfo}>
+            <p className={styles.productInfoColor}>
               <b>Renk:</b>
               {color}
             </p>
@@ -77,7 +77,6 @@ export default function SingleProduct({
           </div>
         </div>
         </div>
-        {isHovering && addToBasketButton(title)}
       </div>
     </div>
   );
