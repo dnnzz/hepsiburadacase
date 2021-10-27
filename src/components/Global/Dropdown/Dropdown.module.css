@@ -17,8 +17,8 @@
   text-indent: -15%;
 }
 
-@media (max-width: 1420px) {
+@media (max-width: 1900px) {
   .dropDownWrapper {
-    margin-right: 70px;
+    margin-right: 85px;
   }
 }

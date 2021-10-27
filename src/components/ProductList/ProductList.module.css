@@ -34,3 +34,9 @@
     margin-left: 5vw;
   }
 }
+
+@media (max-width:1900px){
+  .gridLayout {
+    margin-left: 4rem;
+  }
+}

@@ -127,7 +127,7 @@
 }
 
 @media (min-width: 1900px) {
-  .basket {
+  .basket , .basketHovering{
     margin-left: -140px;
   }
   .miniCart {
