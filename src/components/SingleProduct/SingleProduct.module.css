@@ -84,14 +84,14 @@
   color: #f90000;
 }
 .buttonWrapper {
-  height: 114px;
+  height: 16vh;
   padding: 8px 16px;
 }
 .addButton {
   height: 32px;
   width: 233px;
   margin-left: -5px;
-  margin-top: 15px;
+  margin-top: 30px;
   background: rgba(255, 96, 0, 0.11);
   color: #ff6000;
   font-size: 14px;
@@ -105,7 +105,7 @@
   height: 32px;
   width: 233px;
   margin-left: -5px;
-  margin-top: 80px;
+  margin-top: 30px;
   background: rgba(126, 126, 126, 0, 11);
   color: rgba(176, 176, 176, 1);
   font-size: 14px;

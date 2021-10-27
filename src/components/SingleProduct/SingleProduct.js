@@ -17,10 +17,9 @@ export default function SingleProduct({
     dispatch,
   } = AppState();
 
-  const [isHovering, setIsHovering] = useState(false);
-  const addToBasketButton =(title) => (
-    <div className={styles.buttonWrapper}>
-      <h6 className={styles.cardTitleHover}>{title}</h6>
+  const [isHovering, setIsHovering] = useState(true);
+  const addToBasketButton =() => (
+    <>
       {cart.some((product) => product["productId"] === productId) ? (
         <button data-testid="disabled-btn" disabled className={styles.addButtonPassive}>
           Bu ürünü sepete ekleyemezsiniz.
@@ -39,7 +38,7 @@ export default function SingleProduct({
           Sepete Ekle
         </button>
       )}
-    </div>
+    </>
   );
 
   return (
@@ -53,13 +52,16 @@ export default function SingleProduct({
         <div className={isHovering ? styles.cardImageHover : styles.cardImage} >
           <img src={productPhoto} alt='product' />
         </div>
-        <div className={isHovering  ? styles.cardBodyHovering : styles.cardBody}>
+        <div>
+        <div className={styles.cardBody}>
           <h6
             className={discountPercentage === 0 ? styles.discountlessCardTitle : styles.cardTitle}
           >
             {title}
           </h6>
           <div className={styles.productInfoWrapper}>
+            {isHovering ? addToBasketButton(title) : 
+            <>
             <p className={styles.productInfo}>
               <b>Marka:</b>
               {brand}
@@ -68,10 +70,12 @@ export default function SingleProduct({
               <b>Renk:</b>
               {color}
             </p>
-          </div>
-          <div className={styles.productPrice}>
+            <div className={styles.productPrice}>
             <ProductPrice price={price} discountPercentage={discountPercentage} />
           </div>
+            </>}
+          </div>
+        </div>
         </div>
         {isHovering && addToBasketButton(title)}
       </div>
