@@ -17,7 +17,7 @@ export default function SingleProduct({
     dispatch,
   } = AppState();
 
-  const [isHovering, setIsHovering] = useState(true);
+  const [isHovering, setIsHovering] = useState(false);
   const addToBasketButton =() => (
     <>
       {cart.some((product) => product["productId"] === productId) ? (
